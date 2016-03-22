@@ -18,7 +18,7 @@ const typeValidator = function(value, options) {
     const validationFunction = typeValidator.checks[options.type];
 
     if (!validationFunction) {
-        throw new Error('Unsupported type');
+        throw new Error(`Unsupported type ${options.type}`);
     }
 
     if (!validationFunction(value)) {
